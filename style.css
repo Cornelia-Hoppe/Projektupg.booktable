@@ -1,0 +1,13 @@
+#add-table {
+font-size: 17px;
+background-color: rgb(189, 228, 247);
+Margin: 5px;
+}
+#book-table {
+display: flex;
+flex-direction: column;
+width: 220px;
+border: 5px black;
+padding: 10px;
+text-align: center;
+}
