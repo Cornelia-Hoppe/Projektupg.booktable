@@ -4,7 +4,7 @@ const Post = require("./models/Post");
 
 module.exports = router;
 
-router.post("/newpost", (req, res) => {
+   router.post("/newpost", (req, res) => {
     console.log(req.body);
     const newPost = new Post({
         firstname: req.body.firstname,  
@@ -12,7 +12,9 @@ router.post("/newpost", (req, res) => {
         phonenumber: req.body.phonenumber,
         additionalinfo: req.body.additionalinfo,
     });
-newPost.save((err) => {
+  
+  
+    newPost.save((err) => {
     if (err) {
         console.log(err);
         res.status(500).json({
@@ -43,3 +45,41 @@ router.get("/getposts", (req, res) => {
       }
     });
   });
+
+  router.put("/updatepost/:id", (req, res) => {
+    Post.findByIdAndUpdate(
+      req.params.id,
+      { title: req.body.email, content: req.body.firstname },
+      (err) => {
+        if (err) {
+          res.status(500).json({
+            message: {
+              msgBody: "Your booking is not updated! An error occured.",
+              msgError: true,
+            },
+          });
+        } else {
+          res.status(200).json({
+            message: { msgBody: "Booking updated!", msgError: false },
+          });
+        }
+      }
+    );
+  });
+
+router.delete("/deletepost/:id", (req, res) => {
+  Post.findByIdAndDelete(req.params.id, (err) => { //trying to find id and deleting it
+    if (err) {
+      res.status(500).json({
+        message: {
+          msgBody: "Can't delete booking, an error has occured",
+          msgError: "true"
+        },
+      });
+    } else {
+      res.status(200).json({
+        message: { msgBody: "Booking has been removed", msgError: false },
+      });
+}
+  });
+});

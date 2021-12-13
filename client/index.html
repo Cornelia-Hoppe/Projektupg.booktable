@@ -9,17 +9,20 @@
 </head>
 <body>
 
-    <!-- newBooking instead of "newPost()" from Christians project -->
-    <form onsubmit="newBooking()" id="book-table">
-        <h2>Book a table</h2>
-         <input id="booking-firstname" placeholder="Firstname" required>
-         <input id="booking-email" placeholder="Email" required>
-         <input id="booking-phonenumber" placeholder="Phonenumber" required>
-         <input id="booking-content" placeholder="Additionalinfo" required>
-         <button type="submit">Add booking</button>
-    </form>
-    <p id="booking-message"> </p>
-    <div id="booked-tables"></div>
+    <!-- newPost instead of "newPost()" from Christians project -->
+    <div class="booking-container">
+
+        <form onsubmit="newPost()" id="book-table">
+            <h2 class="booking-title">Book a table</h2>
+            <input id="booking-firstname" placeholder="Firstname" required>
+            <input id="booking-email" placeholder="Email" required>
+            <input id="booking-phonenumber" placeholder="Phonenumber" required>
+            <input id="booking-content" placeholder="Additionalinfo" required>
+            <button type="submit">Add booking</button>
+        </form>
+        <p id="booking-message"> </p>
+        <div id="booked-tables"></div>
+    </div>
     <script src="./app.js"></script>
 </body>
 </html>

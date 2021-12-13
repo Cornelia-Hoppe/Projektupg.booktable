@@ -6,8 +6,23 @@ Margin: 5px;
 #book-table {
 display: flex;
 flex-direction: column;
-width: 220px;
+width: 320px;
 border: 5px black;
 padding: 10px;
 text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+.booking-title {
+    font-size: 3rem;
+}
+
+.booking-container {
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
 }
