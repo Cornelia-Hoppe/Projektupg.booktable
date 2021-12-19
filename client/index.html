@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!--
+  Font link  
+-->
+    
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Nixie+One&display=swap" rel="stylesheet">
+
     <title>Tablebooking</title>
 </head>
 <body>
-
-    <!-- newPost instead of "newPost()" from Christians project -->
-    <div class="booking-container">
-
-        <form onsubmit="newPost()" id="book-table">
-            <h2 class="booking-title">Book a table</h2>
-            <input id="booking-firstname" placeholder="Firstname" required>
-            <input id="booking-email" placeholder="Email" required>
-            <input id="booking-phonenumber" placeholder="Phonenumber" required>
-            <input id="booking-content" placeholder="Additionalinfo" required>
-            <button type="submit">Add booking</button>
-        </form>
-        <p id="booking-message"> </p>
-        <div id="booked-tables"></div>
-    </div>
-    <script src="./app.js"></script>
+    <div class="landing-image">
+        <div class="booking-container">
+            <div class="side-content">
+                <h2 class="booking-title">Book a table</h2>
+                <p class="textbox">Sverigest lyxigaste pizza <br> 6 månaders förtidsbokning. Minst!</p>
+            </div>
+            <form onsubmit="newPost()" id="book-table">
+                <input type="text" id="booking-firstname" placeholder="Firstname" required>
+                <input type="text" id="booking-email" placeholder="Email" required>
+                <input type="text" id="booking-phonenumber" placeholder="Phonenumber" required>
+                <textarea class="text-area-info" type="text" id="booking-content" placeholder="Additional info..." required></textarea> 
+                <button type="submit">Add booking</button>
+            </form>
+            <p id="booking-message"> </p>    
+        </div>
+    </div>    
+        <div class="booked-tables-wrapper">
+            <div id="booked-tables"></div>
+        </div>
+        <script src="./app.js"></script>
 </body>
 </html>

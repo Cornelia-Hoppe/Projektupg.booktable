@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const router = require("./API");
-
+require("dotenv").config();
 
 app.use(cors());
 
@@ -13,7 +13,7 @@ app.use("/api", router)
 
 app.use(express.static("client"))
 
-//connec to db
+//Connecting to db
 mongoose.connect(
     "mongodb://localhost:27017/gruppen",
     { useNewUrlParser: true, useUnifiedTopology: true, autoIndex: true }, 
